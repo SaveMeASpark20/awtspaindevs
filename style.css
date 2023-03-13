@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga&display=swap');
+
+@font-face {
+    font-family: myFont;
+    src: url(blanka.otf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding: var(--navigationOffsetHeight, 2rem);
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: #e7d9cd;
+    font-family: 'Lexend Giga', sans-serif;
+}
+
+h1 {
+    font-size: 5rem;
+    color: #404041;
+}
+
+button {
+    background-color: #676EB8;
+    color:white;
+    border: none;
+    border-radius: 10px;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: 'Lexend Giga', sans-serif;
+}
+
+/* /////////////// NAVBAR //////////////////// */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+nav div .logo {
+    width: 20rem;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.navbar-links li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    
+}
+
+.navbar-links li:hover {
+    background: gray;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #404041;
+    padding: 2rem 1rem;
+    text-transform: uppercase;
+}
+
+
+.bars {
+    height: 30px;
+    width: 30px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 6rem;
+    right: 1rem;
+}
+
+.bars:hover {
+    background: gray;
+}
+
+.bar {
+    width: 80%;
+    height: 10%;
+    background-color: #404041;
+    margin: .3rem 0;
+    border-radius: 1rem;
+}
+
+
+/* /////////////  Main ////// */
+main {
+    color: #404041;
+}
+.main-image {
+
+    display: grid;
+    place-items: center;
+    text-align: center;
+    min-height: 825px;
+    width: 100%;
+    position: relative;
+    isolation: isolate;
+}
+
+.main-image::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image: linear-gradient(to bottom, rgba(64, 64, 65, .7), rgba(103, 110, 184, .7)),
+    url("main-landscape.jpg"); 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.main-text {
+    font-family: 'myFont', sans-serif;
+    font-size: 9rem; 
+    align-self: flex-end;
+    padding-bottom: 1rem;
+    color: white;
+
+}
+
+.main-name {
+    font-size: 2rem;
+    text-transform: uppercase;
+    align-self: flex-start;
+    color: white;
+}
+
+
+
+/* ////////////////////////  About Me    ///////////////////////////////////////////////////////////// */
+
+
+.about-me-section h1{
+    text-align: center;
+}
+
+.about-me {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: rgb(250, 250, 250);
+    padding: 5rem 0;
+    margin: 1rem;
+    border-radius:20px;
+}
+
+.profile {
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px -3px #676EB8;
+}
+
+.profile-row {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.about-me-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me-description p{
+    width: 70%;
+    text-align: justify;
+    font-size: 1.5rem;
+    line-height: 2;
+    align-items: flex-start;
+
+}
+
+
+
+/* //////////////// Projects ///////////////////// */
+
+.project-section {
+    position: relative;
+    height: 100%;
+}
+
+.project-top-design {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+}
+
+.projects {
+    position: relative;
+    z-index: 1;
+}
+
+.projects h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.project-picture-row {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.project-picture-row a {
+    color: #404041;
+}
+
+.project-img1, .project-img2 {
+    position: relative;
+}
+
+
+.project-img1:hover .description-row, .project-img2:hover .description-row {
+    opacity: 1;
+}
+
+.description-row {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.541);
+    border-radius: 20px;
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+
+.description-crypto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.project {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 13px -4px #676EB8;
+    -webkit-box-shadow: 0px 0px 13px -4px#676EB8;
+    -moz-box-shadow: 0px 0px 13px -4px #676EB8;
+
+}
+
+.project-bottom-design {
+    position: absolute;
+    width: 100%;
+}
+
+/* ////////////////////// Footer Section /////////////////////////////////// */
+.footer-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+}
+
+.footer-section p {
+    padding-top: 5rem;
+}
+
+
+.wave {
+    position: absolute;
+    aspect-ratio: 900/100;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.bottom1 { 
+    background-image: url('./wave.svg');
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links li {
+        width: 100%;
+    }
+
+    .navbar-links li a {
+        padding: 1rem;
+    }    
+
+    .navbar-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bars {
+        display: flex;
+    }
+    
+    .about-me {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .project-picture-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main-text {
+        font-size: 5rem;
+    }
+
+}
